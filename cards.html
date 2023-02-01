@@ -1,0 +1,170 @@
+<html>
+  <head>
+    <title>Cards Cadmo</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="cards.css" />
+    <link rel="stylesheet" href="" />
+
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="home-header" id="myHeader" style="top: 0">
+      <div class="adjHeader">
+        <a href="cards.html" class="a-logo">
+          <div class="logo">CN</div>
+        </a>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 30vh;
+      "
+    >
+      <div class="card-group" id="card-group" onmouseleave="mouseOut()">
+        <div class="big-card card" id="big1" onclick="clickCard('big1')">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of
+          the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s, when an unknown
+          printer took a galley of type and scrambled it to make a type specimen
+          book. It has survived not only five centuries, but also the leap into
+          electronic typesetting, remaining essentially unchanged. It was
+          popularised in the 1960s with the release of Letraset sheets
+          containing Lorem Ipsum passages, and more recently with desktop
+          publishing software like Aldus PageMaker including versions of Lorem
+          Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of
+          the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s, when an unknown
+          printer took a galley of type and scrambled it to make a type specimen
+          book. It has survived not only five centuries, but also the leap into
+          electronic typesetting, remaining essentially unchanged. It was
+          popularised in the 1960s with the release of Letraset sheets
+          containing Lorem Ipsum passages, and more recently with desktop
+          publishing software like Aldus PageMaker including versions of Lorem
+          Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </div>
+        <div class="big-card card" id="big2" onclick="clickCard('big2')">
+          <div class="home-header" style="position: relative">
+            <div class="adjHeader">
+              <a href="cards.html" class="a-logo">
+                <div class="logo">CN</div>
+              </a>
+            </div>
+          </div>
+          <div style="height: 10vmin"></div>
+          <div class="mid-board-mini">
+            <a
+              class="link-box"
+              id="link1"
+              onmouseover="chngclr(id)"
+              onmouseleave="clrback(id)"
+              >I</a
+            >
+            <a
+              class="link-box"
+              id="link2"
+              onmouseover="chngclr(id)"
+              onmouseleave="clrback(id)"
+              >Love</a
+            >
+            <a
+              class="link-box"
+              id="link3"
+              onmouseover="chngclr(id)"
+              onmouseleave="clrback(id)"
+              >You
+              <span id="heart">❤️</span>
+            </a>
+          </div>
+        </div>
+        <div class="big-card card" id="big3" onclick="clickCard('big3')">
+          <div
+            class="mid-board-mini"
+            style="height: 100%; width: 100%; padding: 5%"
+          >
+            <div id="img-board1">
+              <div class="img-bord" id="AC-board">
+                <img
+                  id="AC"
+                  style="height: 35vmin; width: 50vmin"
+                  src="https://www.miastogier.pl/baza/Encyklopedia/gry/News/22.03.2022/nws_ac_logo.jpg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="big-card card" id="big4" onclick="clickCard('big4')">
+          Hello there!
+        </div>
+      </div>
+    </div>
+    <div class="mid-board"></div>
+    <div style="height: 10px"></div>
+
+    <script>
+      window.onscroll = function () {
+        scrollTopBar();
+      };
+      for (const link of document.getElementsByClassName("link-box")) {
+        link.onmousemove = (e) => {
+          const decimal = e.clientX / link.offsetWidth;
+
+          const basePercent = 20,
+            percentRange = 30,
+            adjPercent = percentRange * decimal;
+
+          const creamPercent = basePercent + adjPercent;
+
+          let root = document.documentElement;
+          root.style.setProperty("--creamPercent", creamPercent + "%");
+        };
+      }
+
+      let x = 0;
+      let moveImgs = setInterval(function () {
+        btt = document.getElementById("AC-board");
+
+        if (x == 0) btt.style.transform = "translate(2.5%, -2.5%)";
+
+        if (x == 1) btt.style.transform = "translate(5%, 0%)";
+
+        if (x == 2) btt.style.transform = "translate(5%, 2.5%)";
+
+        if (x == 3) btt.style.transform = "translate(2.5%, 5%)";
+
+        if (x == 4) btt.style.transform = "translate(0%, 2.5%)";
+
+        if (x == 5) btt.style.transform = "translate (0%, 0%)";
+
+        x = x + 1;
+        if (x == 6) x = 0;
+      }, 300);
+    </script>
+  </body>
+</html>
