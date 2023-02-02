@@ -10,7 +10,7 @@
   <body>
     <div class="home-header" id="myHeader" style="top: 0">
       <div class="adjHeader">
-        <a href="cards.html" class="a-logo">
+        <a href="index.html" class="a-logo">
           <div class="logo">CN</div>
         </a>
       </div>
@@ -72,7 +72,7 @@
         <div class="big-card card" id="big2" onclick="clickCard('big2')">
           <div class="home-header" style="position: relative">
             <div class="adjHeader">
-              <a href="cards.html" class="a-logo">
+              <a href="index.html" class="a-logo">
                 <div class="logo">CN</div>
               </a>
             </div>
@@ -166,26 +166,15 @@
           root.style.setProperty("--creamPercent", creamPercent + "%");
         };
       }
-
-      //   let x = 0;
-      //   let moveImgs = setInterval(function () {
-      //     btt = document.getElementById("AC-board");
-
-      //     if (x == 0) btt.style.transform = "translate(2.5%, -2.5%)";
-
-      //     if (x == 1) btt.style.transform = "translate(5%, 0%)";
-
-      //     if (x == 2) btt.style.transform = "translate(5%, 2.5%)";
-
-      //     if (x == 3) btt.style.transform = "translate(2.5%, 5%)";
-
-      //     if (x == 4) btt.style.transform = "translate(0%, 2.5%)";
-
-      //     if (x == 5) btt.style.transform = "translate (0%, 0%)";
-
-      //     x = x + 1;
-      //     if (x == 6) x = 0;
-      //   }, 300);
+      for (const cg of document.getElementsByClassName("card-group")) {
+        cg.onmousemove = (e) => {
+          const anim = document.querySelector("@gpCMove");
+          const time = anim.effect.getComputedTiming();
+          console.log(time);
+          let root = documentElement;
+          root.style.setProperty("--time", time);
+        };
+      }
     </script>
   </body>
 </html>

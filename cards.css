@@ -12,6 +12,7 @@ body {
   --lightcream: rgb(250, 242, 225);
   --cream: rgb(250, 224, 170);
   --cubic: cubic-bezier(0.09, 0.82, 0.25, 0.96);
+  --time: 0;
 }
 
 * {
@@ -97,8 +98,23 @@ body {
   transform: rotate(2deg) translate(-5%);
 }
 .card-group:hover {
+  z-index: 6;
   transition: 500ms;
+  /* animation: gpCMove 8s linear infinite; */
 }
+
+@keyframes gpCMove {
+  33% {
+    transform: translate(0%, 10%);
+  }
+  66% {
+    transform: translate(0%, -10%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
 .card-group:hover > .big-card:nth-child(1) {
   transform: rotate(-2deg) translate(55%, 70%);
 }
@@ -122,10 +138,10 @@ body {
 
 #big3 {
   padding: 0;
-  /* display: flex; */
 }
 
 .clicked-card {
+  animation-delay: (4- (--time));
   overflow: hidden;
   width: 40vw;
   height: 45vw;
@@ -194,6 +210,7 @@ body {
   height: 5vmin;
   width: 5vmin;
   animation: rotate 4s linear infinite;
+  z-index: (inherit + 1);
 }
 
 .img-bord {
