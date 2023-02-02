@@ -2,11 +2,14 @@ function clickCard(myId) {
     let element = document.getElementById(myId);
     let clicked = document.querySelector(".clicked-card");
 
-    element.classList.add("clicked-card");
-    element.classList.remove("big-card");
+    if (element.classList.contains("clicked-card")) null;
+    else {
+        element.classList.add("clicked-card");
+        element.classList.remove("big-card");
 
-    clicked.classList.add("big-card");
-    clicked.classList.remove("clicked-card");
+        clicked.classList.add("big-card");
+        clicked.classList.remove("clicked-card");
+    }
 }
 
 function mouseOut() {

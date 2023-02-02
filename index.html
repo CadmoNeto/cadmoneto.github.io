@@ -141,7 +141,26 @@
           </div>
         </div>
         <div class="big-card card" id="big4" onclick="clickCard('big4')">
-          Hello there!
+          <div style="height: 5vmin"></div>
+          <div
+            class="mid-board-mini"
+            style="
+              background-color: var(--darkgrey);
+              color: var(--lightcream);
+              padding: 2%;
+            "
+          >
+            <form action="/action_page.php">
+              <label for="fname">Nome Completo:</label><br />
+              <input
+                type="text"
+                id="fname"
+                name="fname"
+                autocomplete="off"
+                style="width: 50vh; height: 2vh"
+              />
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -164,15 +183,6 @@
 
           let root = document.documentElement;
           root.style.setProperty("--creamPercent", creamPercent + "%");
-        };
-      }
-      for (const cg of document.getElementsByClassName("card-group")) {
-        cg.onmousemove = (e) => {
-          const anim = document.querySelector("@gpCMove");
-          const time = anim.effect.getComputedTiming();
-          console.log(time);
-          let root = documentElement;
-          root.style.setProperty("--time", time);
         };
       }
     </script>

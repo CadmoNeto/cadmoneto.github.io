@@ -100,19 +100,6 @@ body {
 .card-group:hover {
   z-index: 6;
   transition: 500ms;
-  /* animation: gpCMove 8s linear infinite; */
-}
-
-@keyframes gpCMove {
-  33% {
-    transform: translate(0%, 10%);
-  }
-  66% {
-    transform: translate(0%, -10%);
-  }
-  100% {
-    transform: translate(0%, 0%);
-  }
 }
 
 .card-group:hover > .big-card:nth-child(1) {
@@ -140,8 +127,12 @@ body {
   padding: 0;
 }
 
+#big4 {
+  background-color: var(--lightcream);
+  padding: 0;
+}
+
 .clicked-card {
-  animation-delay: (4- (--time));
   overflow: hidden;
   width: 40vw;
   height: 45vw;
@@ -237,6 +228,6 @@ body {
 }
 
 .box-img:hover {
-  transform: scale(150%, 125%);
+  transform: scale(150%, 150%);
   transform-origin: top;
 }
