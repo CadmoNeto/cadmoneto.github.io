@@ -190,22 +190,36 @@ body {
   width: 0%;
 }
 
+.box-board {
+  height: 5vmin;
+  width: 5vmin;
+  animation: rotate 4s linear infinite;
+}
+
 .img-bord {
-  display: inline-block;
   overflow: hidden;
-  border-color: var(--blue);
-  border-width: 5px;
-  border-style: solid;
+  border: var(--blue) 5px solid;
   width: fit-content;
   height: fit-content;
-  background-color: var(--lightcream);
+  animation: rotate 4s linear reverse infinite;
+  transform-origin: left top;
+  offset: border;
 }
 
-#AC-board {
-  transition: 500ms all linear;
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg) translate(0px, 0px);
+  }
 }
 
-#AC:hover {
+.box-img {
   transition: all 800ms ease;
-  transform: scale(200%, 150%);
+  height: 35vmin;
+  width: 50vmin;
+  object-fit: cover;
+}
+
+.box-img:hover {
+  transform: scale(150%, 125%);
+  transform-origin: top;
 }

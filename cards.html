@@ -108,12 +108,33 @@
             class="mid-board-mini"
             style="height: 100%; width: 100%; padding: 5%"
           >
-            <div id="img-board1">
-              <div class="img-bord" id="AC-board">
+            <div class="box-board">
+              <div class="img-bord">
                 <img
-                  id="AC"
-                  style="height: 35vmin; width: 50vmin"
+                  class="box-img"
                   src="https://www.miastogier.pl/baza/Encyklopedia/gry/News/22.03.2022/nws_ac_logo.jpg"
+                />
+              </div>
+            </div>
+            <div
+              class="box-board"
+              style="
+                position: relative;
+                left: 20%;
+                top: 35%;
+                animation: rotate 4s linear reverse infinite;
+              "
+            >
+              <div
+                class="img-bord"
+                style="
+                  border-color: goldenrod;
+                  animation: rotate 4s linear infinite;
+                "
+              >
+                <img
+                  class="box-img"
+                  src="https://t.ctcdn.com.br/D4RYm_OhKL7U_VMBUmv_3LWr1dM=/1024x0/smart/i303576.jpeg"
                 />
               </div>
             </div>
@@ -146,25 +167,25 @@
         };
       }
 
-      let x = 0;
-      let moveImgs = setInterval(function () {
-        btt = document.getElementById("AC-board");
+      //   let x = 0;
+      //   let moveImgs = setInterval(function () {
+      //     btt = document.getElementById("AC-board");
 
-        if (x == 0) btt.style.transform = "translate(2.5%, -2.5%)";
+      //     if (x == 0) btt.style.transform = "translate(2.5%, -2.5%)";
 
-        if (x == 1) btt.style.transform = "translate(5%, 0%)";
+      //     if (x == 1) btt.style.transform = "translate(5%, 0%)";
 
-        if (x == 2) btt.style.transform = "translate(5%, 2.5%)";
+      //     if (x == 2) btt.style.transform = "translate(5%, 2.5%)";
 
-        if (x == 3) btt.style.transform = "translate(2.5%, 5%)";
+      //     if (x == 3) btt.style.transform = "translate(2.5%, 5%)";
 
-        if (x == 4) btt.style.transform = "translate(0%, 2.5%)";
+      //     if (x == 4) btt.style.transform = "translate(0%, 2.5%)";
 
-        if (x == 5) btt.style.transform = "translate (0%, 0%)";
+      //     if (x == 5) btt.style.transform = "translate (0%, 0%)";
 
-        x = x + 1;
-        if (x == 6) x = 0;
-      }, 300);
+      //     x = x + 1;
+      //     if (x == 6) x = 0;
+      //   }, 300);
     </script>
   </body>
 </html>
