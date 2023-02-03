@@ -53,4 +53,13 @@ function clrback(id) {
     box.style.setProperty("color", "lightgrey");
 }
 
+function validateForm() {
+    for (let i = 0; i < document.forms["myForm"].length; i++) {
+        let x = document.forms["myForm"][i].value;
+        if (x == "") {
+            alert("Preencha este espaço corretamente");
+            return false;
+        }
+    }
 
+}

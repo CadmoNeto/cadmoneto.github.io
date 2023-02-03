@@ -150,15 +150,40 @@
               padding: 2%;
             "
           >
-            <form action="/action_page.php">
-              <label for="fname">Nome Completo:</label><br />
+            <form name="myForm" action="/action_page.php" onsubmit="return validateForm()">
+              <label for="fname">Nome Completo<span style="color: darkred;">*</span>:</label><br />
               <input
                 type="text"
                 id="fname"
                 name="fname"
-                autocomplete="off"
-                style="width: 50vh; height: 2vh"
-              />
+                placeholder="Seu Nome Completo"
+                style="width: 50vh; height: 3vh"
+                required
+              /><br /><br />
+              <label for="femail">Endereço de E-Mail<span style="color: darkred;">*</span>:</label><br />
+              <input
+                type="email"
+                id="femail"
+                placeholder="Seu E-Mail"
+                style="width: 30vh; height: 3vh"
+                required
+              /><br /><br />
+              <label for="fphone">Número de Telefone<span style="color: darkred;">*</span>:</label><br />
+              <input
+                type="tel"
+                id="fphone"
+                placeholder="(99) 99999-9999"
+                style="width: 20vh; height: 3vh"
+                required
+              /><br /><br />
+              <label for="gender">Gênero<span style="color: darkred;">*</span>:</label><br>
+              <input name="gender" id="gender" list="genders" required><datalist id="genders">
+                <option value="Masculino"></option>
+                <option value="Feminino"></option>
+                <option value="Não Desejo Informar"></option>
+              </datalist><br /><br />
+              <label for="profi">Proeficiência<span style="color: darkred;">*</span>:</label><br />
+              0% <input type="range" id="profi" value="0" max="100" style="width: 65vh;" required></input> 100%<br /><br />
             </form>
           </div>
         </div>
@@ -184,6 +209,10 @@
           let root = document.documentElement;
           root.style.setProperty("--creamPercent", creamPercent + "%");
         };
+      }
+      let tagArr = document.getElementsByTagName("input");
+      for (let i = 0; i < tagArr.length; i++) {
+        tagArr[i].autocomplete = "no";
       }
     </script>
   </body>
